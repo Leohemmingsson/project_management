@@ -1,0 +1,3 @@
+def server_maintanance():
+    # Do not forget to use thread
+    ...

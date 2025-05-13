@@ -1,0 +1,9 @@
+# Ignore Python cache
+__pycache__/
+
+# Ignore all files in alembic/versions but keep the folder
+alembic/versions/*
+!alembic/versions/.gitkeep
+
+# Ignore secrets
+.env
