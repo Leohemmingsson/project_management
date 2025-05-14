@@ -8,6 +8,7 @@ from .scheduled import server_maintanance
 
 # pip
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from dotenv import dotenv_values
 from apscheduler.schedulers.background import BackgroundScheduler
 
@@ -16,6 +17,18 @@ app = FastAPI(
     title="Project management",
     version="0.1.0",
     redoc_url=None,
+)
+
+origins = [
+    "http://localhost:5173",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,  # or ["*"] for all origins (not recommended for prod)
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 
